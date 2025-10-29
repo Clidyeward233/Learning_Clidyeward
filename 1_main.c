@@ -3,10 +3,20 @@
 //周博渊
 #include <stdio.h>
 int main(){
-    float a,b;
-    scanf("%f",&a);
-    b =a*(9.0/5) + 32;
-    printf("%.1f",b);
-    return 0;
-     
+    int a=0;
+    int i=0;
+    int k=0;
+    scanf("%d",&a);
+    for (i=1;i<50;i++){
+        if (a%i==0){
+            k++;
+        }else{
+            break;
+        }
+    }
+    if (k==2){
+        printf("密钥不安全，请重新输入");
+    }else{
+        printf("密钥安全，密码设置成功");
+    } 
 }
