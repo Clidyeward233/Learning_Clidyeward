@@ -3,21 +3,24 @@
 //周博渊
 #include <stdio.h>
 int main(){
-    int a=0;
-    int i=1;
-    int k=0;
-    scanf("%d",&a);
-    while(i<50){
-        if (a%i==0){
-            k++;
-        }else{
-            break;
-        }
-        i++;
+    int list[10];
+    for(int i=0;i<10;i++){
+        int input = 0;
+        scanf("%d",&input);
+        list[i]=input;
     }
-    if (k==2){
-        printf("密钥不安全，请重新输入");
-    }else{
-        printf("密钥安全，密码设置成功");
-    } 
+    for(int k=0;k<10;k++){
+        for(int i = 0;i<10;i++){
+            if(list[i] > list[i+1]){
+            int middle = list[i];
+            list[i]=list[i+1];
+            list[i+1]=middle;
+            }
+        
+
+        }
+    }
+    for(int i =0;i<10;i++){
+        printf("%d ",list[i]);
+    }
 }
