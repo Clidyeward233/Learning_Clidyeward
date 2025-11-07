@@ -3,21 +3,36 @@
 //周博渊
 #include <stdio.h>
 
+void reverseArray(int arr[], int length) {
+    int start = 0;
+    int end = length - 1;
+    while (start < end) {
+        // Swap elements at start and end
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        
+        start++;
+        end--;
+    }
+}
+
 int main() {
-    int record[5];
-    int i;
-    for (i = 0; i < 4; i++) {
-        scanf("%d", &record[i]);
+    int arr[5];
+    for (int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
     }
-
-    for (i = 4; i > 0; i--) {
-        record[i] = record[i - 1];
+    int length = sizeof(arr) / sizeof(arr[0]);
+    
+    reverseArray(arr, length);
+    
+    // Print the reversed array
+    for (int i = 0; i < length; i++) {
+        printf("%d", arr[i]);
+        if (i < length - 1) {
+            printf(" ");
+        }
     }
-    record[0] = 0;
-    for (i = 0; i < 4; i++) {
-        printf("%d ", record[i]);
-    }
-    printf("%d", record[4]);
-
+    
     return 0;
 }
