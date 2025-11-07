@@ -2,21 +2,23 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-int main(){
-    int a=0;
-    int i=0;
-    int k=0;
-    scanf("%d",&a);
-    for (i=1;i<50;i++){
-        if (a%i==0){
-            k++;
-        }else{
-            break;
+
+int main() {
+    int matrix[3][3];
+    int i, j;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &matrix[i][j]);
         }
     }
-    if (k==2){
-        printf("密钥不安全，请重新输入");
-    }else{
-        printf("密钥安全，密码设置成功");
-    } 
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
+
+
