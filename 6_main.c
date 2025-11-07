@@ -2,19 +2,30 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-int main(){
-    int a,i=0;
-    int b[5];
-    while(i<5){
-        scanf("%d\n",&a);
-        if(a%2==0){
-            b[i]=a;
-            i++;
-        }
+
+int sum(int arr[], int length) {
+    int total = 0;
+    for (int i = 0; i < length; i++) {
+        total += arr[i];
     }
-    for(i=0;i<4;i++){
-        printf("%d ",b[i]);
-    }
-    printf("%d",b[4]);
+    return total;
 }
 
+int product(int arr[], int length) {
+    int total = 1;
+    for (int i = 0; i < length; i++) {
+        total *= arr[i];
+    }
+    return total;
+}
+
+int main() {
+    int arr[5];
+    for (int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+    }
+    int length = sizeof(arr) / sizeof(arr[0]);
+    
+    printf("Sum: %d\n", sum(arr, length));
+    printf("Product: %d\n", product(arr, length));
+}
