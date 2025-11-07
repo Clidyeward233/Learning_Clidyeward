@@ -2,22 +2,13 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-#include <math.h>
-int main(){
-    int i=1;
-    int k,j=0;
-    while(i<=9){
-        j=0;
-        while(j<=9){
-            k=0;
-            while(k<=9){
-                if(100*i+10*j+k==pow(i,3)+pow(j,3)+pow(k,3)){
-                    printf("%d ",(int)100*i+10*j+k);
-                }
-                k++;
-            }
-            j++;
-        }
-        i++;
+int pow1(int a,int b){
+    int end = a;
+    for(int i=1;i<b;i++){
+        end=end*a;
     }
+    return end;
+}
+int main(){
+    printf("%d",pow1(1,2)+pow1(2,2)+pow1(3,2)+pow1(4,2)+pow1(5,2));
 }
