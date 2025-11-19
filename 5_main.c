@@ -2,15 +2,23 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-int sum(int a1,int an,int step){
-    int sum=a1;
-    while (a1<=an-step){
-        a1=a1+step;
-        sum=sum+a1;
-    }
-    return sum;
 
+void next(int *ptr,int len){
+    for (int i = len -1 ; i>0 ; i--){
+        ptr[i] = ptr[i-1];
+    }
+    ptr[0] = 0;
 }
+
+
+
 int main(){
-    printf("%d",sum(1,100,1));
+    int arr[5];
+    for (int i = 0;i<5; i++){
+        scanf("%d",&arr[i]);
+    }
+    next(arr,5);
+    for (int i = 0;i<5; i++){
+        printf("%d ",arr[i]);
+    }
 }
