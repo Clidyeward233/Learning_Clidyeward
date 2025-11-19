@@ -2,13 +2,17 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-int pow1(int a,int b){
-    int end = a;
-    for(int i=1;i<b;i++){
-        end=end*a;
-    }
-    return end;
+
+void selfadd(int *k){
+    (*k)++;
 }
+
+
 int main(){
-    printf("%d",pow1(1,2)+pow1(2,2)+pow1(3,2)+pow1(4,2)+pow1(5,2));
+    int arr[5];
+    for(int i = 0;i<5;i++){
+        scanf("%d",&arr[i]);
+        selfadd(&arr[i]);
+        printf("%d ",arr[i]);
+    }
 }
