@@ -2,23 +2,15 @@
 //493758308@qq.com
 //周博渊
 #include <stdio.h>
-
-int main() {
-    int matrix[3][3];
-    int i, j;
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
+int main(){
+    int arr[5];
+    for(int i = 0;i<5;i++){
+        scanf("%d",&arr[i]);
     }
-    for (j = 0; j < 3; j++) {
-        for (i = 0; i < 3; i++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
+    int *p = arr;
+    for(int i = 0;i<5;i++){
+    *p = *p * 2;
+    printf("%d ",*p);
+    p++;
     }
-
-    return 0;
 }
-
-
