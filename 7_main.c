@@ -3,36 +3,25 @@
 //周博渊
 #include <stdio.h>
 
-void reverseArray(int arr[], int length) {
-    int start = 0;
-    int end = length - 1;
-    while (start < end) {
-        // Swap elements at start and end
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        
-        start++;
-        end--;
+void ser(int *list){
+    for (int i =0 ;i<10 ;i++){
+        for (int j = 0;j<9 ; j++){
+            if (list[j]>list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
+            }
+        }
     }
 }
 
-int main() {
-    int arr[5];
-    for (int i=0;i<5;i++){
+int main(){
+    int arr[10];
+    for (int i =0;i<10;i++){
         scanf("%d",&arr[i]);
     }
-    int length = sizeof(arr) / sizeof(arr[0]);
-    
-    reverseArray(arr, length);
-    
-    // Print the reversed array
-    for (int i = 0; i < length; i++) {
-        printf("%d", arr[i]);
-        if (i < length - 1) {
-            printf(" ");
-        }
+    ser(arr);
+    for (int i =0;i<10;i++){
+        printf("%d ",arr[i]);
     }
-    
-    return 0;
 }
